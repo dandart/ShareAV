@@ -1,0 +1,36 @@
+ShareAV - a new media sharing framework
+
+Primary Objectives and status:
+Upload and download media (audio, video)
+View media privately
+Share media publically or to a group
+    Add to your own library for easier access
+    Re-share
+View media from other streams or sources:
+    Last.fm
+    Jamendo
+    RSS feeds eg podcasts
+    Radio Streams e.g. icecast
+    Visualisations
+User pages
+    Shared Media
+    Favourite media
+Create and remove users
+    Owner
+    Admin
+    Moderator
+Create and remove friends 
+Create and remove groups of friends
+OAuth/OpenID authentication
+REST interface
+Live updates for comments for groups
+Live updates for who's viewing media
+
+Live broadcasting and recording!
+Live notifications of when broadcasting or recording starts
+Live chat - IRC integrated - allow anonymous
+
+Mobile via PhoneGap
+
+Frontend: Static HTML + JS layer - suitable for non-PHP devices
+Backend: PHP, ZF2 + a NoSQL db, REST
