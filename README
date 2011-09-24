@@ -26,7 +26,7 @@ REST interface
 Live updates for comments for groups
 Live updates for who's viewing media
 
-Live broadcasting and recording!
+Live broadcasting and recording! (use JS Audio API)
 Live notifications of when broadcasting or recording starts
 Live chat - IRC integrated - allow anonymous
 
