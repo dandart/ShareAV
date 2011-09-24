@@ -1,0 +1,48 @@
+<schema>
+    <helper class="ShareAV_Helper_Rating" name="Rating"/>
+        <idrefs class="ShareAV_Model_User" name="VotersUp"/>
+        <idrefs class="ShareAV_Model_User" name="VotersDown"/>
+    </helper>
+            
+    <model abstract class="ShareAV_Model_Media_Abstract">
+        <field name="Title" datatype="text"/>
+        <field name="Album" datatype="text"/>
+        <field name="Artist" datatype="text"/>
+        <field name="Filename" datatype="text"/>
+        <helper name="Rating"/>
+    </model>
+
+    <model class="ShareAV_Model_User" name="User">
+        <id name="UserId"/>
+        <field name="Username" datatype="text"/>
+        <field name="Password" datatype="text"/>
+        <field name="Nickname" datatype="text"/>
+        <child class="ShareAV_Model_User_Credential" name="Credential">
+            <id name="CredentialId"/>
+            <field name="Service" datatype="text"/>
+            <field name="Username" datatype="text"/>
+            <field name="Token" datatype="text"/>
+        </child>
+        <child class="ShareAV_Model_User_Media" extends="ShareAV_Model_Media_Abstract" name="Media">
+            <id name="MediaId"/>
+            <field name="Comment" datatype="text"/>
+        </child>
+    </model>
+
+    <model class="ShareAV_Model_Group" name="Group">
+        <id name="GroupId">
+        <field name="Name" datatype="text"/>
+        <idref name="Owner" idof="ShareAV_Model_User"/>
+        <idrefs name="Members" idsof="ShareAV_Model_User"/><![CDATA[ This will be nobody for the everybody group ]]>
+        <child class="ShareAV_Model_Group_Media" extends="ShareAV_Model_Media_Abstract" name="Media">
+            <id name="MediaId"/>
+            <helperfield name="Rating"/>
+            <child class="ShareAV_Model_Group_Media_Comment" name="Comment">
+                <id name="CommentId"/>
+                <idref name="User" idof="ShareAV_Model_User"/>
+                <field name="Comment" datatype="text"/>
+                <helperfield name="Rating"/>
+            </child>
+        </child>
+    </model>
+</schema>
