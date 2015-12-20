@@ -1,0 +1,22 @@
+Model Structure
+
+All models should:
+    Know how to fetch and get fields
+
+Base Models should:
+
+    Have a final protected __constuct() - customisation in static ::create()s
+    Know how to save themselves (and be able to consistently)
+    Be compatible with (but independent from) NoSQL
+    Have an array of fields inline
+
+Child Models should:
+    
+    Require a base
+    Have a final protected __construct(Base)
+    Have an array of fields inline
+
+Fields should have:
+    Name
+    Behaviour type (field, child multiple/single, inline/embedded (only NoSQL), idref, collection idrefs
+    Optional data type (int/string/etc) - later
